@@ -1,6 +1,7 @@
 pipeline {
   agent {
-    label 'docker-slave' {
+    docker {
+      label 'docker-slave'
       image 'jenkins-slave:new'
       args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
     }
