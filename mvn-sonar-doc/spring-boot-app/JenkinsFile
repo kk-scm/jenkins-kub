@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       customWorkspace '/root/jenkins-slave'
-      label 'agent1'
+      label 'docker-slave'
       image 'test'
       args '-u root -v /root/jenkins-slave:/root/jenkins-slave'
       args '-u root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
